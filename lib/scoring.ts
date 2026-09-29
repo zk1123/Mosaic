@@ -1,4 +1,4 @@
-import type { RawWalletTx } from "./nansen";
+import type { RawWalletTx } from "./zerion";
 
 // This is Mosaic's actual product logic. Everything else in lib/ is
 // integration glue — this file is the part worth being deliberate about.

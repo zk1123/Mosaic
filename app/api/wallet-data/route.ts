@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchWalletTransactions } from "@/lib/nansen";
+import { fetchWalletTransactions } from "@/lib/zerion";
 
 export async function GET(req: NextRequest) {
   const address = req.nextUrl.searchParams.get("address");

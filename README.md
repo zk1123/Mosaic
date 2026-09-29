@@ -9,7 +9,7 @@ beyond authentication) on the Onchain Finance & Trading track.
 
 - Next.js 14 (App Router) + TypeScript
 - Privy — embedded wallet, session signers, policy engine
-- Nansen API — wallet transaction history + labels (multi-chain read)
+- Zerion API — wallet transaction/portfolio history (multi-chain read)
 - Kuru — Monad-native swap execution
 - `@kuru-labs/kuru-sdk` + `ethers` v5
 
@@ -63,7 +63,7 @@ app/
     narrate/                Server-side LLM narration call
     recommend/              Personality category -> suggested trade
 lib/
-  nansen.ts                 Nansen API client (server-only)
+  zerion.ts                 Zerion API client (server-only)
   scoring.ts                Metrics -> personality classification (the
                              one piece of real product logic in the repo)
   kuru.ts                   Kuru SDK wrapper — pools + swap execution
@@ -82,7 +82,7 @@ in this order instead, riskiest integrations first)
    else. This is the actual bounty requirement.
 2. Kuru integration (`lib/kuru.ts`) — prove a real swap lands on Monad
    testnet.
-3. Nansen pipeline (`lib/nansen.ts`) — confirm real response shape,
+3. Zerion pipeline (`lib/zerion.ts`) — confirm real response shape,
    replace the placeholder types.
 4. Scoring rules + LLM narration (`lib/scoring.ts`, `app/api/narrate`).
 5. Wire Mode 1 end-to-end, then gate Mode 2 behind Privy.
@@ -94,7 +94,7 @@ search for `TODO(Day` to find what's still a stub.
 
 ## Known unknowns to resolve early, not late
 
-- Exact Nansen response envelope shape (`lib/nansen.ts` has a best-guess
+- Exact Zerion response envelope shape (`lib/zerion.ts` has a best-guess
   type, not a verified one).
 - Exact Privy session-signer/policy-engine API surface for the SDK
   version actually installed (`lib/privy-session.ts` is scaffolding, not
