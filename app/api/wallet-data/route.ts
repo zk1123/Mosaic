@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const txs = await fetchWalletTransactions(address, "all");
+    const txs = await fetchWalletTransactions(address);
     return NextResponse.json({ txs });
   } catch (err) {
     console.error(err);
